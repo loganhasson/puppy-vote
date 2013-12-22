@@ -1,0 +1,14 @@
+<%= form_tag('/options', method: :patch) do %>
+
+  <% @options.each do |option| %>
+    <div class="field">
+      <%= label_tag "option[id_#{option.id}]", option.name %>
+      <%= radio_button_tag 'option[id]', option.id %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= submit_tag "Vote!" %>
+  </div>
+
+<% end %>
